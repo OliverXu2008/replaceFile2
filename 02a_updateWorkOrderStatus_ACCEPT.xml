@@ -1,0 +1,70 @@
+<!--@operation updateWorkOrderStatus
+@action requestWorkOrderUpdate
+@sender SDP 
+@receiver NBN Co 
+@scenario Successfully perform an Action Update for Action Accept Activity FTTN Activation
+@name Normal - FTTN Action Accept Activity Activation 
+@description This sample message demonstrates how to request an Action Update for Action Accept Activity FTTN Activation  
+-->
+<dns:ManageWorkOrderRequest xmlns:dns="http://www.nbnco.com.au/cim/manageWorkOrder/v5">
+    <FieldWork>
+        <ID>WOR100000429925</ID>
+        <FieldWorkSpecifiedBy>
+            <ID>FTTN_Activation_Work_Order_Specification</ID>
+            <version>4.1.0</version>
+            <type>WorkOrder Specification</type>
+            <category>FTTN</category>
+        </FieldWorkSpecifiedBy>
+        <HasStatusSnapshot>
+            <revisionNumber>1</revisionNumber>
+            <revisionTime>2015-09-26T10:04:00Z</revisionTime>
+            <SnapshotOfCurrentStatus>
+                <currentFieldWorkStatus>Open</currentFieldWorkStatus>
+                <ActivityStatusInfo>
+                    <ID>WOR100000429939</ID>
+                    <currentActivityStateId>APPR</currentActivityStateId>
+                    <currentActivityStateDateTime>2017-01-03T09:54:00Z</currentActivityStateDateTime>
+                    <ActivityInstantiatedBy>
+                        <ID>Activity_FTTN_Activation</ID>
+                    </ActivityInstantiatedBy>
+                </ActivityStatusInfo>
+            </SnapshotOfCurrentStatus>
+        </HasStatusSnapshot>
+        <FieldWorkHasChanges>
+            <ActivityChangeEntry>
+                <stateId>ACKNOWLEDGED</stateId>
+                <stepId>Step_SDP_Confirm_Schedule</stepId>
+                <actionId>Action_Accept_Activity</actionId>
+                <OccursWithinActivity>
+                    <ID>WOR100000429939</ID>
+                    <ActivityInstantiatedBy>
+                        <ID>Activity_FTTN_Activation</ID>
+                    </ActivityInstantiatedBy>
+                </OccursWithinActivity>
+                <InputData>
+                    <DescribedBy>
+                        <value>2017-01-03T09:54:00+11:00</value>
+                        <Characteristic>
+                            <ID>Action Date</ID>
+                            <type>Input</type>
+                        </Characteristic>
+                    </DescribedBy>
+                    <DescribedBy>
+                        <value>ASSIGNED</value>
+                        <Characteristic>
+                            <ID>Reason Code</ID>
+                            <type>Input</type>
+                        </Characteristic>
+                    </DescribedBy>
+                    <DescribedBy>
+                        <value>MANJULA-ACCEPT1</value>
+                        <Characteristic>
+                            <ID>Additional Info</ID>
+                            <type>Input</type>
+                        </Characteristic>
+                    </DescribedBy>
+                </InputData>
+            </ActivityChangeEntry>
+        </FieldWorkHasChanges>
+    </FieldWork>
+</dns:ManageWorkOrderRequest>
